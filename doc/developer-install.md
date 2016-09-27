@@ -36,7 +36,15 @@ The issue:
 
 ### Linux
 
-To run electron on Linux you need to have libgconf-2.so.4 installed.
+To run electron on Linux you need to verify if libgconf-2.so.4 is installed. E.g.:
+```bash
+$ lsb_release --description
+Description:	Ubuntu 16.04.1 LTS
+$ ldconfig -p | grep libgconf
+	libgconf-2.so.4 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libgconf-2.so.4
+	libgconf-2.so.4 (libc6) => /usr/lib/i386-linux-gnu/libgconf-2.so.4
+	libgconf-2.so (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libgconf-2.so
+```
 
 
 Ref: [Linux (Arch) build depends on libgconf-2.so.4](https://github.com/LightTable/LightTable/issues/1926)
